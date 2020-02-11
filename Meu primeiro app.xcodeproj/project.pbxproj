@@ -13,6 +13,11 @@
 		AB7EFE9723E06EE500F06C3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB7EFE9623E06EE500F06C3A /* Assets.xcassets */; };
 		AB7EFE9A23E06EE500F06C3A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB7EFE9823E06EE500F06C3A /* LaunchScreen.storyboard */; };
 		AB7EFEA523E06EE500F06C3A /* Meu_primeiro_appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7EFEA423E06EE500F06C3A /* Meu_primeiro_appTests.swift */; };
+		AB7EFEB023E07C6200F06C3A /* hqdefault.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AB7EFEAF23E07C6200F06C3A /* hqdefault.jpg */; };
+		AB7EFEB223E44C4A00F06C3A /* RatiwgBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7EFEB123E44C4A00F06C3A /* RatiwgBar.swift */; };
+		AB7EFEB423E85CFD00F06C3A /* Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7EFEB323E85CFD00F06C3A /* Bar.swift */; };
+		AB98D4D423EAE7F2003FD3D5 /* MealTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB98D4D323EAE7F2003FD3D5 /* MealTableViewCell.swift */; };
+		AB98D4D623EB00AD003FD3D5 /* MealTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB98D4D523EB00AD003FD3D5 /* MealTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +41,11 @@
 		AB7EFEA023E06EE500F06C3A /* Meu primeiro appTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Meu primeiro appTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB7EFEA423E06EE500F06C3A /* Meu_primeiro_appTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meu_primeiro_appTests.swift; sourceTree = "<group>"; };
 		AB7EFEA623E06EE500F06C3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB7EFEAF23E07C6200F06C3A /* hqdefault.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = hqdefault.jpg; sourceTree = "<group>"; };
+		AB7EFEB123E44C4A00F06C3A /* RatiwgBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatiwgBar.swift; sourceTree = "<group>"; };
+		AB7EFEB323E85CFD00F06C3A /* Bar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bar.swift; sourceTree = "<group>"; };
+		AB98D4D323EAE7F2003FD3D5 /* MealTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealTableViewCell.swift; sourceTree = "<group>"; };
+		AB98D4D523EB00AD003FD3D5 /* MealTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,12 +87,17 @@
 		AB7EFE8E23E06EE300F06C3A /* Meu primeiro app */ = {
 			isa = PBXGroup;
 			children = (
+				AB7EFEB123E44C4A00F06C3A /* RatiwgBar.swift */,
 				AB7EFE8F23E06EE300F06C3A /* AppDelegate.swift */,
 				AB7EFE9123E06EE300F06C3A /* ViewController.swift */,
 				AB7EFE9323E06EE300F06C3A /* Main.storyboard */,
+				AB98D4D523EB00AD003FD3D5 /* MealTableViewController.swift */,
+				AB98D4D323EAE7F2003FD3D5 /* MealTableViewCell.swift */,
 				AB7EFE9623E06EE500F06C3A /* Assets.xcassets */,
+				AB7EFEAF23E07C6200F06C3A /* hqdefault.jpg */,
 				AB7EFE9823E06EE500F06C3A /* LaunchScreen.storyboard */,
 				AB7EFE9B23E06EE500F06C3A /* Info.plist */,
+				AB7EFEB323E85CFD00F06C3A /* Bar.swift */,
 			);
 			path = "Meu primeiro app";
 			sourceTree = "<group>";
@@ -179,6 +194,7 @@
 			files = (
 				AB7EFE9A23E06EE500F06C3A /* LaunchScreen.storyboard in Resources */,
 				AB7EFE9723E06EE500F06C3A /* Assets.xcassets in Resources */,
+				AB7EFEB023E07C6200F06C3A /* hqdefault.jpg in Resources */,
 				AB7EFE9523E06EE300F06C3A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -198,7 +214,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB7EFE9223E06EE300F06C3A /* ViewController.swift in Sources */,
+				AB7EFEB423E85CFD00F06C3A /* Bar.swift in Sources */,
 				AB7EFE9023E06EE300F06C3A /* AppDelegate.swift in Sources */,
+				AB7EFEB223E44C4A00F06C3A /* RatiwgBar.swift in Sources */,
+				AB98D4D623EB00AD003FD3D5 /* MealTableViewController.swift in Sources */,
+				AB98D4D423EAE7F2003FD3D5 /* MealTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
