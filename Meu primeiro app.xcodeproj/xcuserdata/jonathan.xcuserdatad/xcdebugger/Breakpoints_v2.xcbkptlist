@@ -10,13 +10,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Meu primeiro app/MealTableViewController.swift"
-            timestampString = "603124672.072214"
+            timestampString = "603381329.396265"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
-            landmarkName = "loadSampleMeals()"
-            landmarkType = "7">
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -26,12 +26,91 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Meu primeiro app/MealTableViewController.swift"
-            timestampString = "603124672.072319"
+            timestampString = "603381329.3963881"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
-            landmarkName = "unwindToMealList(sender:)"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Meu primeiro app/Bar.swift"
+            timestampString = "603381329.396553"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "Bar"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "globalinit_33_3F58FCE496953F05714A45EE3D4EE150_func1"
+                  moduleName = "Meu primeiro app"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jonathan/Desktop/Meu%20primeiro%20app/Meu%20primeiro%20app/Bar.swift"
+                  timestampString = "603200829.24907"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "63"
+                  endingLineNumber = "63"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Meu_primeiro_app.Bar.ArchiveURL.unsafeMutableAddressor : Foundation.URL"
+                  moduleName = "Meu primeiro app"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jonathan/Desktop/Meu%20primeiro%20app/Meu%20primeiro%20app/Bar.swift"
+                  timestampString = "603200829.263903"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "63"
+                  endingLineNumber = "63"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static Meu_primeiro_app.Bar.ArchiveURL.getter : Foundation.URL"
+                  moduleName = "Meu primeiro app"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jonathan/Desktop/Meu%20primeiro%20app/Meu%20primeiro%20app/Bar.swift"
+                  timestampString = "603200829.2795089"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "63"
+                  endingLineNumber = "63"
+                  offsetFromSymbolStart = "40">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Meu primeiro app/ViewController.swift"
+            timestampString = "603381329.396656"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "120"
+            endingLineNumber = "120"
+            landmarkName = "prepare(for:sender:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

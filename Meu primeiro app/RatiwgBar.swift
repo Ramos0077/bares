@@ -36,14 +36,15 @@ import UIKit
             fatalError("The button, \(button), is not in the ratingButtons array: \(ratingButtons)")
         }
         
-        // Calculate the rating of the selected button
+        // Calcula a classificação do botão selecionado
+
         let selectedRating = index + 1
         
         if selectedRating == ratiwg {
-            // If the selected star represents the current rating, reset the rating to 0.
+            // Se a estrela selecionada representa a classificação atual, redefina a classificação para 0.
             ratiwg = 0
         } else {
-            // Otherwise set the rating to the selected star
+            // Caso contrário, defina a classificação para a estrela selecionada
             ratiwg = selectedRating
         }
     }
@@ -95,10 +96,10 @@ import UIKit
     
     private func updateButtonSelectionStates() {
         for (index, button) in ratingButtons.enumerated() {
-            // If the index of a button is less than the rating, that button should be selected.
+            // Se o índice de um botão for menor que a classificação, esse botão deverá ser selecionado.
             button.isSelected = index < ratiwg
             
-            // /Set the hint string for the currently selected star
+            // / Define a sequência de dicas para a estrela atualmente selecionada
             let hintString: String?
             if ratiwg == index + 1 {
                 hintString = "Tap to reset the rating to zero."
@@ -106,7 +107,7 @@ import UIKit
                 hintString = nil
             }
             
-            // Calculate the value string
+            // Calcular a cadeia de valor
             let valueString: String
             switch (ratiwg) {
             case 0:
@@ -117,7 +118,7 @@ import UIKit
                 valueString = "\(ratiwg) stars set."
             }
             
-            // Assign the hint string and value string
+            // Atribua a string de dica e a string de valor
             button.accessibilityHint = hintString
             button.accessibilityValue = valueString
             

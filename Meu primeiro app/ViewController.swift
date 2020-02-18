@@ -31,7 +31,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     }
 
     
-    
+    //MARK Properties
     @IBOutlet weak var RatingEstrela: RatiwgBar!
     @IBOutlet weak var saveButton: UIBarButtonItem!
     @IBOutlet weak var imageView: UIImageView!
@@ -42,29 +42,30 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Manipule a entrada do usuário do campo de texto por meio de retornos de chamada delegados.
         nomeBar.delegate = self
         endereco.delegate = self
         avaliacao.delegate = self
         telefone.delegate = self
-        longitude.delegate = self
-        latitude.delegate = self
+        endereco.delegate = self
         
+        
+        // Configure vistas se estiver editando uma refeição existente.
         if let bar = bar {
             navigationItem.title = bar.name
             nomeBar.text = bar.name
             imageView.image = bar.photo
             RatingEstrela.ratiwg = bar.rating
             telefone.text = bar.telefone
-            longitude.text = bar.longitude
-            latitude.text = bar.latitude
+            endereco.text = bar.endereco
+    
+   }
         
-            
-        }
-        
-        
+        // Ative o botão Salvar apenas se o campo de texto tiver um nome de refeição válido.
         updateSaveButtonState()
         
     }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         var nomeCampo : String!
         switch textField {
@@ -99,11 +100,12 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     
     //MARK: Navigation
     
-    // This method lets you configure a view controller before it's presented.
+    // Este método permite configurar um controlador de exibição antes de ser apresentado.
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         super.prepare(for: segue, sender: sender)
         
-        // Configure the destination view controller only when the save button is pressed.
+        // Configure o controlador da visualização de destino apenas quando o botão Salvar for pressionado.
         guard let button = sender as? UIBarButtonItem, button === saveButton else {
             
             os_log("The save button was not pressed, cancelling", log: OSLog.default, type: .debug)
@@ -113,9 +115,9 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         let photo = imageView.image
         let rating = RatingEstrela.ratiwg
         let telefone = self.telefone.text ?? ""
-    
+        let endereco =  self.endereco.text ?? ""
         
-        bar = Bar(name: name, photo: photo, rating: rating, latitude: 1234, longitude: 4321,  telefone: telefone )
+        bar = Bar(name: name, photo: photo, rating: rating, latitude: 1234, longitude: 4321,  telefone: telefone, endereco: endereco)
     }
     
     @IBAction func imagem(_ sender: Any) {
@@ -130,6 +132,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         present(imagePickerController, animated: true, completion: nil)
         
     }
+    
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
     }
@@ -168,14 +171,15 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
             vc.present(actionSheet, animated: true, completion: nil)
     }
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        // Disable the Save button while editing.
+        // Desative o botão Salvar durante a edição.
         saveButton.isEnabled = false
   
         updateSaveButtonState()
         navigationItem.title = nomeBar.text
     }
     private func updateSaveButtonState() {
-        // Disable the Save button if the text field is empty.
+        // Desabilite o botão Salvar se o campo de texto estiver vazio.
+
         let text = nomeBar.text ?? ""
         saveButton.isEnabled = !text.isEmpty
     }

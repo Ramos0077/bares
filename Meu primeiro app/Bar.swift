@@ -12,11 +12,11 @@ class Bar: NSObject, NSCoding {
     
     required convenience init?(coder aDecoder: NSCoder) {
         
-        // The name is required. If we cannot decode a name string, the initializer should fail.
         guard let name = aDecoder.decodeObject(forKey: PropertyKey.name) as? String else {
             os_log("Unable to decode the name for a Meal object.", log: OSLog.default, type: .debug)
             return nil
         }
+        
         guard let photo = aDecoder.decodeObject(forKey: PropertyKey.photo)as? UIImage else{
             os_log("Erro photo",log:OSLog.default,type:.debug)
             return nil
@@ -25,6 +25,7 @@ class Bar: NSObject, NSCoding {
             os_log("Erro rating",log:OSLog.default,type:.debug)
             return nil
         }
+        
         guard let latitude = aDecoder.decodeFloat(forKey: PropertyKey.latitude)as? Float else{
             os_log("Erro latitude",log:OSLog.default,type:.debug)
             return nil
@@ -37,9 +38,15 @@ class Bar: NSObject, NSCoding {
             os_log("Erro telefone",log:OSLog.default,type:.debug)
             return nil
         }
+        guard let endereco = aDecoder.decodeObject(forKey: PropertyKey.endereco)as? String else{
+            os_log("Erro endereco",log:OSLog.default,type:.debug)
+            return nil
+        }
+        
+        
     
         // Must call designated initializer.
-        self.init(name: name, photo: photo, rating: rating, latitude: latitude, longitude:longitude, telefone: telefone)
+        self.init(name: name, photo: photo, rating: rating, latitude: latitude, longitude:longitude, telefone: telefone, endereco: endereco)
         
     }
     
@@ -50,6 +57,7 @@ class Bar: NSObject, NSCoding {
         aCoder.encode(telefone, forKey: PropertyKey.telefone)
         aCoder.encode(longitude,forKey: PropertyKey.longitude)
         aCoder.encode(latitude, forKey: PropertyKey.latitude)
+        aCoder.encode(endereco, forKey: PropertyKey.endereco)
 
         
     }
@@ -80,10 +88,11 @@ class Bar: NSObject, NSCoding {
     var latitude: Float
     var longitude: Float
     var telefone: String
+    var endereco: String
     
     //MARK: Initialization
     
-    init?(name: String, photo: UIImage?, rating: Int, latitude:  Float, longitude:  Float, telefone: String) {
+    init?(name: String, photo: UIImage?, rating: Int, latitude:  Float, longitude:  Float, telefone: String, endereco: String) {
         
         if telefone.isEmpty || telefone.count < 0 || telefone.count > 18 {
             return nil
@@ -99,6 +108,7 @@ class Bar: NSObject, NSCoding {
     self.latitude = latitude
     self.longitude = longitude
     self.telefone = telefone
+    self.endereco = endereco
     
     
    }

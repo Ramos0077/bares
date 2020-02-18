@@ -17,8 +17,10 @@ class MealTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.leftBarButtonItem = editButtonItem
         
+        // Use o item do botão de edição fornecido pelo controlador de exibição de tabela.
+        navigationItem.leftBarButtonItem = editButtonItem
+        // Carrega os dados da amostra.
         loadSampleMeals()
     }
     
@@ -27,16 +29,16 @@ class MealTableViewController: UITableViewController {
         let photo2 = UIImage(named: "Image-2")
         let photo3 = UIImage(named: "Image-3")
         
-        guard let Bar1 = Bar(name: "Bar do ze", photo: photo1, rating: 4, latitude: 1, longitude: 2, telefone: "nao")
+        guard let Bar1 = Bar(name: "Bar do ze", photo: photo1, rating: 4, latitude: 1, longitude: 2, telefone: "+55", endereco: "Rua")
             else {
                 fatalError("Unable to in")
         }
         
-        guard let Bar2 = Bar(name: "No trabalho", photo: photo2, rating: 4, latitude: 1, longitude: 2, telefone: "nao") else {
+        guard let Bar2 = Bar(name: "No trabalho", photo: photo2, rating: 4, latitude: 1, longitude: 2, telefone: "+55", endereco: "Rua") else {
             fatalError("Unable to instantiate meal2")
         }
         
-        guard let Bar3 = Bar(name: "Bar dos tiozinho", photo: photo3, rating: 4, latitude: 1, longitude: 2, telefone: "nao")
+        guard let Bar3 = Bar(name: "Bar dos tiozinho", photo: photo3, rating: 4, latitude: 1, longitude: 2, telefone: "+55", endereco: "Rua")
             else {
                 fatalError("Unable to instantiate meal2")
                 
@@ -45,6 +47,7 @@ class MealTableViewController: UITableViewController {
         
     }
     
+    // MARK: - fonte de dados do modo de exibição de tabela
 
     override func numberOfSections(in tableView: UITableView) -> Int {
     
@@ -57,28 +60,30 @@ class MealTableViewController: UITableViewController {
         return bars.count
     }
     
-    // Override to support editing the table view.
+    // Substitua para suportar a edição da exibição da tabela.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Delete the row from the data source
+            // Exclua a linha da fonte de dados
             bars.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+            // Crie uma nova instância da classe apropriada, insira-a na matriz e adicione uma nova linha à visualização da tabela
+
         }
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
         
-        // Table view cells are reused and should be dequeued using a cell identifier.
+
+        // As células da exibição de tabela são reutilizadas e devem ser desenfileiradas usando um identificador de célula.
         let cellIdentifier = "MealTableViewCell"
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? MealTableViewCell  else {
             fatalError("The dequeued cell is not an instance of MealTableViewCell.")
         }
         
-        // Fetches the appropriate meal for the data source layout.
+        // Busca a refeição apropriada para o layout da fonte de dados.
         let bar = bars[indexPath.row]
         cell.nameLabel.text = bar.name
         cell.photoImageView.image = bar.photo
@@ -90,13 +95,13 @@ class MealTableViewController: UITableViewController {
     @IBAction func unwindToMealList(sender: UIStoryboardSegue) {
         if let sourceViewController = sender.source as? ViewController, let bares = sourceViewController.bar {
             if let selectedIndexPath = tableView.indexPathForSelectedRow {
-                // Update an existing meal.
+                // Atualize uma refeição existente.
                 bars[selectedIndexPath.row] = bares
                 tableView.reloadRows(at: [selectedIndexPath], with: .none)
             }
             else {
                 
-            // Add a new meal.
+                // Adicione uma nova refeição.
             let newIndexPath = IndexPath(row: bars.count, section: 0)
             
             bars.append(bares)
@@ -113,7 +118,7 @@ class MealTableViewController: UITableViewController {
         case "AddItem":
             os_log("Adding a new meal.", log: OSLog.default, type: .debug)
             
-        case "ShowDetail":
+        case "edit":
             guard let mealDetailViewController = segue.destination as? ViewController else {
                 fatalError("Unexpected destination: \(segue.destination)")
             }
