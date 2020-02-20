@@ -11,9 +11,37 @@ import MapKit
 
 
 
-class MapsViewController: UIViewController, MKMapViewDelegate {
+class MapsViewController: UIViewController {
 
     @IBOutlet weak var mapsView: MKMapView!
+    
+    var artworks: [Artwork] = []
+    
+    func loadInitialData() {
+    
+        let artwork = Artwork(title: "moitilas",
+                              locationName: "Waikiki Gateway Park",
+                              discipline: "Sculpture",
+                              coordinate: CLLocationCoordinate2D(latitude: -26.8918542, longitude: -49.0655956))
+        
+        let artwork2 = Artwork(title: "Comunidade lanches",
+                              locationName: "Waikiki Gateway Park",
+                              discipline: "Sculpture",
+                              coordinate: CLLocationCoordinate2D(latitude: -26.8839173, longitude: -49.0844298))
+        
+        let artwork3 = Artwork(title: "Dile Lanches",
+                               locationName: "Waikiki Gateway Park",
+                               discipline: "Sculpture",
+                               coordinate: CLLocationCoordinate2D(latitude: -26.8091989, longitude: -49.0813009))
+        
+        let artwork4 = Artwork(title: "dragão Lanches",
+                               locationName: "Waikiki Gateway Park",
+                               discipline: "Sculpture",
+                               coordinate: CLLocationCoordinate2D(latitude: -26.8861998, longitude: -49.0820582))
+        
+        artworks += [artwork,artwork2, artwork3, artwork4]
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +56,12 @@ class MapsViewController: UIViewController, MKMapViewDelegate {
                                                       latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
             mapsView.setRegion(coordinateRegion, animated: true)
             
+            mapsView.register(Artwork.self,
+                             forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
+            
+            loadInitialData()
+            mapsView.addAnnotations(artworks)
+            
         }
         
       
@@ -35,11 +69,11 @@ class MapsViewController: UIViewController, MKMapViewDelegate {
         centerMapOnLocation(location: initialLocation)
         mapsView.delegate = self
         // show artwork on map
-        let artwork = Artwork(title: "Montilas",
+        /*let artwork = Artwork(title: "Moitilas",
                               locationName: "Waikiki Gateway Park",
                               discipline: "Sculpture",
                               coordinate: CLLocationCoordinate2D(latitude: -26.8918542, longitude: -49.0655956))
-        mapsView.addAnnotation(artwork)
+        mapsView.addAnnotation(artwork)*/
         
     }
     
@@ -58,7 +92,7 @@ class MapsViewController: UIViewController, MKMapViewDelegate {
 
 }
 
-extension ViewController: MKMapViewDelegate {
+extension MapsViewController: MKMapViewDelegate {
     // 1
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         // 2

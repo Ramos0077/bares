@@ -16,6 +16,27 @@ class Artwork: NSObject, MKAnnotation {
     let discipline: String
     let coordinate: CLLocationCoordinate2D
     
+    var imageName: String? {
+        if discipline == "Sculpture" { return "Statue" }
+        return "Flag"
+    }
+    
+    // markerTintColor for disciplines: Sculpture, Plaque, Mural, Monument, other
+    var markerTintColor: UIColor  {
+        switch discipline {
+        case "Monument":
+            return .red
+        case "Mural":
+            return .cyan
+        case "Plaque":
+            return .blue
+        case "Sculpture":
+            return .purple
+        default:
+            return .green
+        }
+    }
+    
     init(title: String, locationName: String, discipline: String, coordinate: CLLocationCoordinate2D) {
         self.title = title
         self.locationName = locationName
@@ -23,7 +44,25 @@ class Artwork: NSObject, MKAnnotation {
         self.coordinate = coordinate
         
         super.init()
+        
+        
     }
+    
+    init?(json: [Any]) {
+        // 1
+        self.title = json[16] as? String ?? "No Title"
+        self.locationName = json[12] as! String
+        self.discipline = json[15] as! String
+        // 2
+        if let latitude = Double(json[18] as! String),
+            let longitude = Double(json[19] as! String) {
+            self.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+        } else {
+            self.coordinate = CLLocationCoordinate2D()
+        }
+    }
+    
+    
     
     var subtitle: String? {
         return locationName

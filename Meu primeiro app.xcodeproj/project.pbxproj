@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB7D8C0423FD80FE00FB0688 /* ArtworkViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7D8C0323FD80FE00FB0688 /* ArtworkViews.swift */; };
 		AB7EFE9023E06EE300F06C3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7EFE8F23E06EE300F06C3A /* AppDelegate.swift */; };
 		AB7EFE9223E06EE300F06C3A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7EFE9123E06EE300F06C3A /* ViewController.swift */; };
 		AB7EFE9523E06EE300F06C3A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB7EFE9323E06EE300F06C3A /* Main.storyboard */; };
@@ -33,6 +34,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AB7D8C0323FD80FE00FB0688 /* ArtworkViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworkViews.swift; sourceTree = "<group>"; };
 		AB7EFE8C23E06EE300F06C3A /* Meu primeiro app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Meu primeiro app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB7EFE8F23E06EE300F06C3A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB7EFE9123E06EE300F06C3A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				AB86A4F623FC1FD100A24A92 /* Artwork.swift */,
+				AB7D8C0323FD80FE00FB0688 /* ArtworkViews.swift */,
 				AB98D4D723FC03F0003FD3D5 /* MapsViewController.swift */,
 				AB7EFE8E23E06EE300F06C3A /* Meu primeiro app */,
 				AB7EFEA323E06EE500F06C3A /* Meu primeiro appTests */,
@@ -220,6 +223,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB7EFE9223E06EE300F06C3A /* ViewController.swift in Sources */,
+				AB7D8C0423FD80FE00FB0688 /* ArtworkViews.swift in Sources */,
 				AB7EFEB423E85CFD00F06C3A /* Bar.swift in Sources */,
 				AB86A4F723FC1FD100A24A92 /* Artwork.swift in Sources */,
 				AB98D4D823FC03F1003FD3D5 /* MapsViewController.swift in Sources */,
